@@ -39,9 +39,12 @@ async def log_requests(request: Request, call_next):
     return response
 
 
+from app.api.routes import health, summarize, ask, metrics
+
 app.include_router(health.router,    prefix="/api/v1")
 app.include_router(summarize.router, prefix="/api/v1")
 app.include_router(ask.router,       prefix="/api/v1")
+app.include_router(metrics.router,   prefix="/api/v1")
 
 
 @app.get("/", tags=["System"])

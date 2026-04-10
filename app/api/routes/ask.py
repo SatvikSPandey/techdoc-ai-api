@@ -7,6 +7,7 @@ from app.services.ai_service import AIService
 from app.utils.logger import logger
 from app.core.rate_limiter import limiter
 from app.core.config import settings
+from app.utils.metrics import tracker
 
 router = APIRouter()
 ai_service = AIService()
@@ -33,6 +34,8 @@ async def ask_document(
     )
 
     processing_time_ms = round((time.time() - start_time) * 1000, 2)
+
+    tracker.record_request(success=True, response_time_ms=processing_time_ms)
 
     return AskResponse(
         answer=result["answer"],
