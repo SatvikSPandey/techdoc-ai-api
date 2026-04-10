@@ -4,6 +4,8 @@ A production-grade REST API for AI-powered technical document analysis. Built wi
 
 ## Live Demo
 
+**Streamlit UI:** https://techdoc-ai-satvik.streamlit.app
+
 **Base URL:** http://13.201.68.108:8000
 
 **Interactive API Docs:** http://13.201.68.108:8000/docs
