@@ -12,7 +12,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install all packages
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements_backend.txt
 
 # Now copy the rest of the code
 COPY . .
